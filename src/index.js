@@ -1,7 +1,9 @@
-import Post from "@models/Post"
-import './styles/styles.css'
-import webpackLogo from '@/assets/ag-grid-logo.png'
 import './styles/scss.scss'
+import React from "react"
+import ReacrDom from 'react-dom'
+import { App } from "./App"
 
-const post = new Post('Post title', webpackLogo)
+
+ReacrDom.render(<App />, document.getElementById('root'));
+
 
