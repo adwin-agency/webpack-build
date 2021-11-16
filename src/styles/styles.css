@@ -1,0 +1,33 @@
+@import '~normalize.css';
+@import 'roboto.css';
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    padding-top: 2em;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+.logo{
+    background-image: url("../assets/ag-grid-logo.png");
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+pre{
+    color: #000;
+}
+
+.logo{
+    background-size: 50%;
+}
