@@ -1,1 +1,69 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>webpack</title><script defer="defer" src="main.a0d7bc8df7dfa72f9ed4.js"></script><script defer="defer" src="analitycs.a0d7bc8df7dfa72f9ed4.js"></script><link href="main.a0d7bc8df7dfa72f9ed4.css" rel="stylesheet"></head><body><div class="container"><h1 class="webpack">LK test</h1><div class="logo"></div><div class="test"><div class="test__col">col col col</div><div class="test__col">col col col</div></div></div><script src="analitycs.bundle.js"></script><script src="main.bundle.js"></script></body></html>
+<head><script defer="defer" src="main.js"></script><script defer="defer" src="analitycs.js"></script></head>Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module not found: Error: Can't resolve '/Users/anton/develop/webpack-build/src/index.html' in '/Users/anton/develop/webpack-build/src'
+  ModuleNotFoundError: Module not found: Error: Can't resolve '/Users/anton/develop/webpack-build/src/index.html' in '/Users/anton/develop/webpack-build/src'
+      at /Users/anton/develop/webpack-build/node_modules/webpack/lib/Compilation.js:2011:28
+      at /Users/anton/develop/webpack-build/node_modules/webpack/lib/NormalModuleFactory.js:795:13
+      at eval (eval at create (/Users/anton/develop/webpack-build/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:10:1)
+      at /Users/anton/develop/webpack-build/node_modules/webpack/lib/NormalModuleFactory.js:275:22
+      at eval (eval at create (/Users/anton/develop/webpack-build/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:9:1)
+      at /Users/anton/develop/webpack-build/node_modules/webpack/lib/NormalModuleFactory.js:431:22
+      at /Users/anton/develop/webpack-build/node_modules/webpack/lib/NormalModuleFactory.js:124:11
+      at /Users/anton/develop/webpack-build/node_modules/webpack/lib/NormalModuleFactory.js:667:25
+      at /Users/anton/develop/webpack-build/node_modules/webpack/lib/NormalModuleFactory.js:852:8
+      at /Users/anton/develop/webpack-build/node_modules/webpack/lib/NormalModuleFactory.js:972:5
+  
+  - Compilation.js:2011 
+    [webpack-build]/[webpack]/lib/Compilation.js:2011:28
+  
+  - NormalModuleFactory.js:795 
+    [webpack-build]/[webpack]/lib/NormalModuleFactory.js:795:13
+  
+  
+  - NormalModuleFactory.js:275 
+    [webpack-build]/[webpack]/lib/NormalModuleFactory.js:275:22
+  
+  
+  - NormalModuleFactory.js:431 
+    [webpack-build]/[webpack]/lib/NormalModuleFactory.js:431:22
+  
+  - NormalModuleFactory.js:124 
+    [webpack-build]/[webpack]/lib/NormalModuleFactory.js:124:11
+  
+  - NormalModuleFactory.js:667 
+    [webpack-build]/[webpack]/lib/NormalModuleFactory.js:667:25
+  
+  - NormalModuleFactory.js:852 
+    [webpack-build]/[webpack]/lib/NormalModuleFactory.js:852:8
+  
+  - NormalModuleFactory.js:972 
+    [webpack-build]/[webpack]/lib/NormalModuleFactory.js:972:5
+  
+  - child-compiler.js:169 
+    [webpack-build]/[html-webpack-plugin]/lib/child-compiler.js:169:18
+  
+  - Compiler.js:559 
+    [webpack-build]/[webpack]/lib/Compiler.js:559:11
+  
+  - Compiler.js:1129 
+    [webpack-build]/[webpack]/lib/Compiler.js:1129:17
+  
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [webpack-build]/[tapable]/lib/Hook.js:18:14
+  
+  - Compiler.js:1125 
+    [webpack-build]/[webpack]/lib/Compiler.js:1125:33
+  
+  - Compilation.js:2782 finalCallback
+    [webpack-build]/[webpack]/lib/Compilation.js:2782:11
+  
+  - Compilation.js:3087 
+    [webpack-build]/[webpack]/lib/Compilation.js:3087:11
+  
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [webpack-build]/[tapable]/lib/Hook.js:18:14
+  
+</anonymous></anonymous></pre>

@@ -1,7 +1,10 @@
 import Post from "@models/Post"
+import config from "@/server/config"
 import './styles/styles.css'
 import webpackLogo from '@/assets/ag-grid-logo.png'
-import './styles/scss.scss'
+import '@/styles/scss.scss'
 
-const post = new Post('Post title', webpackLogo)
+//node js
+
+
 
