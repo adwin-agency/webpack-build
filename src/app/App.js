@@ -4,6 +4,6 @@ import styles from './styles/styles.module.scss'
 
 export const App = () => {
     return (
-        <div className={styles.app}>heladaloa</div>
+        <div className={styles.app}>heladaloaaaa</div>
     )
 }

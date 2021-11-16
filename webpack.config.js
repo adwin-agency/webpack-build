@@ -30,7 +30,7 @@ const optimization = () => {
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
 
 module.exports = {
-    context: path.resolve(__dirname, 'src'),
+    context: path.resolve(__dirname, 'src/app'),
     mode: 'development',
     entry: {
         main: ["@babel/polyfill", './index.js'],
@@ -43,7 +43,7 @@ module.exports = {
         extensions: ['.js', '.json', '.png'],
         alias: {
             '@models': path.resolve(__dirname, 'src/models'),
-            '@': path.resolve(__dirname, 'src'),
+            '@': path.resolve(__dirname, 'src/app'),
         }
     },
     optimization: optimization(),
