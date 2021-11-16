@@ -30,20 +30,20 @@ const optimization = () => {
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
 
 module.exports = {
-    context: path.resolve(__dirname, 'src/app'),
+    context: path.resolve(__dirname, 'app/src'),
     mode: 'development',
     entry: {
         main: ["@babel/polyfill", './index.js'],
     },
     output: {
         filename: filename('js'),
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'app/dist')
     },
     resolve: {
         extensions: ['.js', '.json', '.png'],
         alias: {
-            '@models': path.resolve(__dirname, 'src/models'),
-            '@': path.resolve(__dirname, 'src/app'),
+            '@models': path.resolve(__dirname, 'app/src'),
+            '@': path.resolve(__dirname, 'app/src'),
         }
     },
     optimization: optimization(),
@@ -94,8 +94,9 @@ module.exports = {
                     "sass-loader",
                 ],
             },
+
             {
-                test: /\.(png|jpg|svg|gif)$/,
+                test: /\.(png|jpg|gif)$/,
                 type: 'asset/resource',
             },
             {
@@ -109,7 +110,21 @@ module.exports = {
             {
                 test: /\.csv$/,
                 use: ['csv-loader']
-            }
-        ]
+            },
+            {
+                test: /\.svg$/,
+                oneOf: [
+                    {
+                        exclude: path.resolve(__dirname, 'app/src/img/bg/'),
+                        use: 'svg-inline-loader'
+                    },
+                    {
+                        include: path.resolve(__dirname, 'app/src/img/bg/'),
+                        type: 'asset/resource'
+                    },
+                ]
+            },
+
+        ],
     }
 }
