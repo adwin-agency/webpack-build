@@ -1,1 +1,0 @@
-window.analitycs=function(){let e=0,t=!1;const n=()=>e++;return $(document).on("click"),document.addEventListener("click",n),{destroy(){document.removeEventListener("click",n),t=!0},geClick:()=>t?`destroy total = ${e}`:e}}();

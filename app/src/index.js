@@ -1,10 +1,9 @@
-import Post from "@models/Post"
-import config from "@/server/config"
-import './styles/styles.css'
-import webpackLogo from '@/assets/ag-grid-logo.png'
-import '@/styles/scss.scss'
+import './styles/scss.scss'
+import React from "react"
+import ReacrDom from 'react-dom'
+import { App } from "./App"
 
-//node js
 
+ReacrDom.render(<App />, document.getElementById('root'));
 
 

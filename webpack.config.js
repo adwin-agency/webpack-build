@@ -1,6 +1,7 @@
 const path = require('path');
+require("@babel/polyfill");
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCss = require('optimize-css-assets-webpack-plugin')
 const TerserWpPlugin = require('terser-webpack-plugin')
@@ -16,7 +17,7 @@ const optimization = () => {
         }
     }
 
-    if (isProd){
+    if (isProd) {
         config.minimizer = [
             new OptimizeCss,
             new TerserWpPlugin
@@ -29,21 +30,20 @@ const optimization = () => {
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
 
 module.exports = {
-    context: path.resolve(__dirname, 'src'),
+    context: path.resolve(__dirname, 'src/app'),
     mode: 'development',
     entry: {
-        main: './index.js',
-        analitycs: './analytics.js'
+        main: ["@babel/polyfill", './index.js'],
     },
     output: {
         filename: filename('js'),
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
-        extensions: ['.js','.json','.png'],
+        extensions: ['.js', '.json', '.png'],
         alias: {
             '@models': path.resolve(__dirname, 'src/models'),
-            '@': path.resolve(__dirname, 'src'),
+            '@': path.resolve(__dirname, 'src/app'),
         }
     },
     optimization: optimization(),
@@ -68,6 +68,20 @@ module.exports = {
     ],
     module: {
         rules: [
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: [
+                            '@babel/preset-env',
+                            "@babel/preset-react",
+                            "@babel/preset-typescript"
+                        ]
+                    }
+                }
+            },
             {
                 test: /\.css$/,
                 use: [MiniExtractPlugin.loader, 'css-loader']
